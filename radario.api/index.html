@@ -573,6 +573,8 @@ curl -X get https://api.radario.ru/v1/hosts/<span class="o">{</span>id<span clas
 </code></pre>
 <p><code class="prettyprint">GET /v1/hosts/{id}</code></p>
 
+<p>Get company by id</p>
+
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -609,11 +611,73 @@ curl -X get https://api.radario.ru/v1/hosts/<span class="o">{</span>id<span clas
 </tr>
 </tbody></table>
 
+<h3 id="attributes">Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Company id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Company title</td>
+</tr>
+<tr>
+<td>logoUri</td>
+<td>Company logo URI</td>
+</tr>
+<tr>
+<td>requisiteName</td>
+<td>Company requisite name</td>
+</tr>
+<tr>
+<td>requisiteINN</td>
+<td>Company requisite INN</td>
+</tr>
+<tr>
+<td>requisiteAddress</td>
+<td>Company requisite address</td>
+</tr>
+<tr>
+<td>supportEmail</td>
+<td>Company support email</td>
+</tr>
+<tr>
+<td>supportPhone</td>
+<td>Company support phone</td>
+</tr>
+<tr>
+<td>visitingRules</td>
+<td>Company visiting rules</td>
+</tr>
+<tr>
+<td>refundRules</td>
+<td>Company refund phone</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Example responses</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="err">Data</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"logoUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requisiteName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requisiteINN"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requisiteAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"supportEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"supportPhone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"visitingRules"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"refundRules"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
