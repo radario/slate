@@ -236,7 +236,7 @@
 
 <h1 id="apiaccount">ApiAccount</h1>
 
-<h2 id="apiaccount_create">ApiAccount_Create</h2>
+<h2 id="internal-create_account">/internal/create_account</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -585,7 +585,7 @@ This operation does not require authentication
 
 <h1 id="cities">Cities</h1>
 
-<h2 id="cities_get">Cities_Get</h2>
+<h2 id="v1-cities">/v1/cities</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -705,7 +705,7 @@ This operation does not require authentication
 
 <h1 id="company">Company</h1>
 
-<h2 id="company_get">Company_Get</h2>
+<h2 id="v1-hosts-id">/v1/hosts/{id}</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -818,7 +818,7 @@ This operation does not require authentication
 
 <h1 id="doc">Doc</h1>
 
-<h2 id="doc_api">Doc_Api</h2>
+<h2 id="v1-doc">/v1/doc</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -907,7 +907,7 @@ curl -X get http://api.radario.ru/v1/doc
 This operation does not require authentication
 </aside>
 
-<h2 id="doc_errorcodes">Doc_ErrorCodes</h2>
+<h2 id="v1-doc-errors">/v1/doc/errors</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -996,7 +996,7 @@ curl -X get http://api.radario.ru/v1/doc/errors
 This operation does not require authentication
 </aside>
 
-<h2 id="doc_entities">Doc_Entities</h2>
+<h2 id="v1-doc-entities">/v1/doc/entities</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -1088,7 +1088,7 @@ This operation does not require authentication
 
 <h1 id="events">Events</h1>
 
-<h2 id="events_get">Events_Get</h2>
+<h2 id="v1-events">/v1/events</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -1248,7 +1248,7 @@ curl -X get http://api.radario.ru/v1/events
 This operation does not require authentication
 </aside>
 
-<h2 id="events_getbyid">Events_GetById</h2>
+<h2 id="v1-events-eventid">/v1/events/{eventId}</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -1359,7 +1359,139 @@ curl -X get http://api.radario.ru/v1/events/<span class="o">{</span>eventId<span
 This operation does not require authentication
 </aside>
 
-<h2 id="events_gettickettypes">Events_GetTicketTypes</h2>
+<h2 id="v1-events-eventid-ticket_types">/v1/events/{eventId}/ticket_types</h2>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X get http://api.radario.ru/v1/events/<span class="o">{</span>eventId<span class="o">}</span>/ticket_types
+</code></pre><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://api.radario.ru/v1/events/{eventId}/ticket_types</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.radario.ru</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'http://api.radario.ru/v1/events/{eventId}/ticket_types'</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'http://api.radario.ru/v1/events/{eventId}/ticket_types'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'http://api.radario.ru/v1/events/{eventId}/ticket_types'</span><span class="p">,</span> <span class="ss">params:
+  </span><span class="p">{</span>
+    <span class="c1"># TODO</span>
+  <span class="p">}</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.radario.ru/v1/events/{eventId}/ticket_types'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+  <span class="c"># TODO</span>
+<span class="p">})</span>
+
+<span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"http://api.radario.ru/v1/events/{eventId}/ticket_types"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</code></pre>
+<p><code class="prettyprint">GET /v1/events/{eventId}/ticket_types</code></p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>eventId</td>
+<td>path</td>
+<td>integer</td>
+<td>true</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>onlyWithOrderCreationAvailableViaApi</td>
+<td>query</td>
+<td>boolean</td>
+<td>false</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>No description</td>
+</tr>
+</tbody></table>
+
+<h3 id="responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id="v1-events-eventid-ticket_types_grouped">/v1/events/{eventId}/ticket_types_grouped</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -1491,7 +1623,7 @@ curl -X get http://api.radario.ru/v1/events/<span class="o">{</span>eventId<span
 This operation does not require authentication
 </aside>
 
-<h2 id="events_gettickets">Events_GetTickets</h2>
+<h2 id="v1-events-eventid-tickets">/v1/events/{eventId}/tickets</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -1616,7 +1748,7 @@ curl -X get http://api.radario.ru/v1/events/<span class="o">{</span>eventId<span
 This operation does not require authentication
 </aside>
 
-<h2 id="events_getorders">Events_GetOrders</h2>
+<h2 id="v1-events-eventid-orders">/v1/events/{eventId}/orders</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -1743,7 +1875,7 @@ This operation does not require authentication
 
 <h1 id="group">Group</h1>
 
-<h2 id="group_get">Group_Get</h2>
+<h2 id="v1-hosts-hostid-groups">/v1/hosts/{hostId}/groups</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -1870,7 +2002,7 @@ This operation does not require authentication
 
 <h1 id="orders">Orders</h1>
 
-<h2 id="orders_reserve">Orders_Reserve</h2>
+<h2 id="v1-orders-reserve">/v1/orders/reserve</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -1990,7 +2122,7 @@ curl -X post http://api.radario.ru/v1/orders/reserve
 This operation does not require authentication
 </aside>
 
-<h2 id="orders_approve">Orders_Approve</h2>
+<h2 id="v1-orders-approve">/v1/orders/approve</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -2108,7 +2240,7 @@ curl -X post http://api.radario.ru/v1/orders/approve
 This operation does not require authentication
 </aside>
 
-<h2 id="orders_update">Orders_Update</h2>
+<h2 id="v1-orders-update">/v1/orders/update</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -2227,7 +2359,7 @@ curl -X post http://api.radario.ru/v1/orders/update
 This operation does not require authentication
 </aside>
 
-<h2 id="orders_cancel">Orders_Cancel</h2>
+<h2 id="v1-orders-cancel">/v1/orders/cancel</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -2345,7 +2477,7 @@ curl -X post http://api.radario.ru/v1/orders/cancel
 This operation does not require authentication
 </aside>
 
-<h2 id="orders_refund">Orders_Refund</h2>
+<h2 id="v1-orders-refund">/v1/orders/refund</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -2467,7 +2599,7 @@ curl -X post http://api.radario.ru/v1/orders/refund
 This operation does not require authentication
 </aside>
 
-<h2 id="orders_getbyid">Orders_GetById</h2>
+<h2 id="v1-orders-id">/v1/orders/{id}</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -2578,7 +2710,7 @@ curl -X get http://api.radario.ru/v1/orders/<span class="o">{</span>id<span clas
 This operation does not require authentication
 </aside>
 
-<h2 id="orders_getuserorderinfo">Orders_GetUserOrderInfo</h2>
+<h2 id="host-orders-orderid">/host/orders/{orderId}</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -2689,7 +2821,7 @@ curl -X get http://api.radario.ru/host/orders/<span class="o">{</span>orderId<sp
 This operation does not require authentication
 </aside>
 
-<h2 id="orders_getuserordersinfo">Orders_GetUserOrdersInfo</h2>
+<h2 id="host-orders">/host/orders</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -2816,7 +2948,7 @@ This operation does not require authentication
 
 <h1 id="places">Places</h1>
 
-<h2 id="places_getbycity">Places_GetByCity</h2>
+<h2 id="v1-places">/v1/places</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -2948,7 +3080,7 @@ curl -X get http://api.radario.ru/v1/places
 This operation does not require authentication
 </aside>
 
-<h2 id="places_getbyid">Places_GetById</h2>
+<h2 id="v1-places-id">/v1/places/{id}</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -3061,7 +3193,7 @@ This operation does not require authentication
 
 <h1 id="promocodes">Promocodes</h1>
 
-<h2 id="promocodes_get">Promocodes_Get</h2>
+<h2 id="v1-promocodes">/v1/promocodes</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -3181,7 +3313,7 @@ This operation does not require authentication
 
 <h1 id="refcampaign">RefCampaign</h1>
 
-<h2 id="refcampaign_getstatistics">RefCampaign_GetStatistics</h2>
+<h2 id="v1-ref-campaigns-statistics-id">/v1/ref-campaigns/statistics/{id}</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -3292,7 +3424,7 @@ curl -X get http://api.radario.ru/v1/ref-campaigns/statistics/<span class="o">{<
 This operation does not require authentication
 </aside>
 
-<h2 id="refcampaign_getbycompany">RefCampaign_GetByCompany</h2>
+<h2 id="v1-ref-campaigns-get-by-company-companyid">/v1/ref-campaigns/get-by-company/{companyId}</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -3424,7 +3556,134 @@ curl -X get http://api.radario.ru/v1/ref-campaigns/get-by-company/<span class="o
 This operation does not require authentication
 </aside>
 
-<h2 id="refcampaign_save">RefCampaign_Save</h2>
+<h2 id="put-v1-ref-campaigns-save">PUT /v1/ref-campaigns/save</h2>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X put http://api.radario.ru/v1/ref-campaigns/save
+</code></pre><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">http://api.radario.ru/v1/ref-campaigns/save</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.radario.ru</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/save'</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'put'</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'http://api.radario.ru/v1/ref-campaigns/save'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="s1">'PUT'</span><span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/save'</span><span class="p">,</span> <span class="ss">params:
+  </span><span class="p">{</span>
+    <span class="c1"># TODO</span>
+  <span class="p">}</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'http://api.radario.ru/v1/ref-campaigns/save'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+  <span class="c"># TODO</span>
+<span class="p">})</span>
+
+<span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"http://api.radario.ru/v1/ref-campaigns/save"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"PUT"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</code></pre>
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>refCampaignDto</td>
+<td>body</td>
+<td>RefCampaignDto</td>
+<td>true</td>
+<td>No description</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"RewardLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Reward"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"CompanyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"EventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"DiscountValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ValidFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-06T08:35:22Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ValidUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-06T08:35:22Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Circulation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"IsDeleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id="post-v1-ref-campaigns-save">POST /v1/ref-campaigns/save</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -3481,8 +3740,6 @@ curl -X post http://api.radario.ru/v1/ref-campaigns/save
 <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 </code></pre>
-<p><code class="prettyprint">POST /v1/ref-campaigns/save</code></p>
-
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -3515,8 +3772,8 @@ curl -X post http://api.radario.ru/v1/ref-campaigns/save
   </span><span class="s2">"CompanyId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"EventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"DiscountValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ValidFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-06T08:24:50Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ValidUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-06T08:24:50Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ValidFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-06T08:35:22Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ValidUntil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-06T08:35:22Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"Circulation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"IsDeleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3553,28 +3810,28 @@ curl -X post http://api.radario.ru/v1/ref-campaigns/save
 This operation does not require authentication
 </aside>
 
-<h2 id="refcampaign_adduserstorefcampaign">RefCampaign_AddUsersToRefCampaign</h2>
+<h2 id="put-v1-ref-campaigns-add-users">PUT /v1/ref-campaigns/add-users</h2>
 
 <blockquote>
 <p>Code samples</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X post http://api.radario.ru/v1/ref-campaigns/add-users
-</code></pre><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">http://api.radario.ru/v1/ref-campaigns/add-users</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+curl -X put http://api.radario.ru/v1/ref-campaigns/add-users
+</code></pre><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">http://api.radario.ru/v1/ref-campaigns/add-users</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">api.radario.ru</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 </code></pre><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
   <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="na">url</span><span class="p">:</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span>
-    <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'put'</span><span class="p">,</span>
     <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
     <span class="p">}</span>
   <span class="p">})</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
-<span class="nx">fetch</span><span class="p">(</span><span class="s1">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">})</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="s1">'PUT'</span><span class="p">})</span>
 <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
 <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
@@ -3583,7 +3840,7 @@ curl -X post http://api.radario.ru/v1/ref-campaigns/add-users
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
 <span class="nb">require</span> <span class="s1">'json'</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span> <span class="ss">params:
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span> <span class="ss">params:
   </span><span class="p">{</span>
     <span class="c1"># TODO</span>
   <span class="p">}</span>
@@ -3591,14 +3848,14 @@ curl -X post http://api.radario.ru/v1/ref-campaigns/add-users
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
   <span class="c"># TODO</span>
 <span class="p">})</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"http://api.radario.ru/v1/ref-campaigns/add-users"</span><span class="o">);</span>
 <span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"PUT"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
 <span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
     <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
@@ -3610,8 +3867,6 @@ curl -X post http://api.radario.ru/v1/ref-campaigns/add-users
 <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 </code></pre>
-<p><code class="prettyprint">POST /v1/ref-campaigns/add-users</code></p>
-
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -3674,7 +3929,344 @@ curl -X post http://api.radario.ru/v1/ref-campaigns/add-users
 This operation does not require authentication
 </aside>
 
-<h2 id="refcampaign_delete">RefCampaign_Delete</h2>
+<h2 id="post-v1-ref-campaigns-add-users">POST /v1/ref-campaigns/add-users</h2>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X post http://api.radario.ru/v1/ref-campaigns/add-users
+</code></pre><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">http://api.radario.ru/v1/ref-campaigns/add-users</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.radario.ru</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span> <span class="ss">params:
+  </span><span class="p">{</span>
+    <span class="c1"># TODO</span>
+  <span class="p">}</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://api.radario.ru/v1/ref-campaigns/add-users'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+  <span class="c"># TODO</span>
+<span class="p">})</span>
+
+<span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"http://api.radario.ru/v1/ref-campaigns/add-users"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</code></pre>
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>request</td>
+<td>body</td>
+<td>AddUsersToCampaignRequest</td>
+<td>true</td>
+<td>No description</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"CampaignId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"UserIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">0</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id="put-v1-ref-campaigns-id-delete">PUT /v1/ref-campaigns/{id}/delete</h2>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X put http://api.radario.ru/v1/ref-campaigns/<span class="o">{</span>id<span class="o">}</span>/delete
+</code></pre><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">http://api.radario.ru/v1/ref-campaigns/{id}/delete</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.radario.ru</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/{id}/delete'</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'put'</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'http://api.radario.ru/v1/ref-campaigns/{id}/delete'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="s1">'PUT'</span><span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/{id}/delete'</span><span class="p">,</span> <span class="ss">params:
+  </span><span class="p">{</span>
+    <span class="c1"># TODO</span>
+  <span class="p">}</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'http://api.radario.ru/v1/ref-campaigns/{id}/delete'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+  <span class="c"># TODO</span>
+<span class="p">})</span>
+
+<span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"http://api.radario.ru/v1/ref-campaigns/{id}/delete"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"PUT"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</code></pre>
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>integer</td>
+<td>true</td>
+<td>No description</td>
+</tr>
+</tbody></table>
+
+<h3 id="responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id="post-v1-ref-campaigns-id-delete">POST /v1/ref-campaigns/{id}/delete</h2>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X post http://api.radario.ru/v1/ref-campaigns/<span class="o">{</span>id<span class="o">}</span>/delete
+</code></pre><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">http://api.radario.ru/v1/ref-campaigns/{id}/delete</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.radario.ru</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/{id}/delete'</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'http://api.radario.ru/v1/ref-campaigns/{id}/delete'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'http://api.radario.ru/v1/ref-campaigns/{id}/delete'</span><span class="p">,</span> <span class="ss">params:
+  </span><span class="p">{</span>
+    <span class="c1"># TODO</span>
+  <span class="p">}</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'http://api.radario.ru/v1/ref-campaigns/{id}/delete'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+  <span class="c"># TODO</span>
+<span class="p">})</span>
+
+<span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"http://api.radario.ru/v1/ref-campaigns/{id}/delete"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</code></pre>
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>integer</td>
+<td>true</td>
+<td>No description</td>
+</tr>
+</tbody></table>
+
+<h3 id="responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id="delete-v1-ref-campaigns-id-delete">DELETE /v1/ref-campaigns/{id}/delete</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -3731,8 +4323,6 @@ curl -X delete http://api.radario.ru/v1/ref-campaigns/<span class="o">{</span>id
 <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 </code></pre>
-<p><code class="prettyprint">DELETE /v1/ref-campaigns/{id}/delete</code></p>
-
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -3785,7 +4375,7 @@ curl -X delete http://api.radario.ru/v1/ref-campaigns/<span class="o">{</span>id
 This operation does not require authentication
 </aside>
 
-<h2 id="refcampaign_get">RefCampaign_Get</h2>
+<h2 id="v1-ref-campaigns-id">/v1/ref-campaigns/{id}</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -3898,7 +4488,7 @@ This operation does not require authentication
 
 <h1 id="schemes">Schemes</h1>
 
-<h2 id="schemes_getbyplaceid">Schemes_GetByPlaceId</h2>
+<h2 id="v1-schemes">/v1/schemes</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -4023,7 +4613,7 @@ curl -X get http://api.radario.ru/v1/schemes
 This operation does not require authentication
 </aside>
 
-<h2 id="schemes_getbyid">Schemes_GetById</h2>
+<h2 id="v1-schemes-id">/v1/schemes/{id}</h2>
 
 <blockquote>
 <p>Code samples</p>
@@ -4136,7 +4726,91 @@ This operation does not require authentication
 
 <h1 id="search">Search</h1>
 
-<h2 id="search_search">Search_Search</h2>
+<h2 id="search">/search</h2>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X get http://api.radario.ru/search
+</code></pre><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">http://api.radario.ru/search</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.radario.ru</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="s1">'http://api.radario.ru/search'</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'http://api.radario.ru/search'</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'http://api.radario.ru/search'</span><span class="p">,</span> <span class="ss">params:
+  </span><span class="p">{</span>
+    <span class="c1"># TODO</span>
+  <span class="p">}</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://api.radario.ru/search'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+  <span class="c"># TODO</span>
+<span class="p">})</span>
+
+<span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"http://api.radario.ru/search"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</code></pre>
+<p><code class="prettyprint">GET /search</code></p>
+
+<h3 id="responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
+</span></code></pre>
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id="v1-search">/v1/search</h2>
 
 <blockquote>
 <p>Code samples</p>
