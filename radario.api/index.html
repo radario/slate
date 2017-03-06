@@ -238,6 +238,8 @@
 
 <h2 id="v1-categories">/v1/categories</h2>
 
+<p>Get events category</p>
+
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -311,7 +313,7 @@ curl -X get https://api.radario.ru/v1/categories
 </tr>
 </tbody></table>
 
-<h4 id="attributes">Attributes</h4>
+<h3 id="attributes">Attributes</h3>
 
 <table><thead>
 <tr>
@@ -347,6 +349,8 @@ This operation does not require authentication
 <h1 id="cities">Cities</h1>
 
 <h2 id="v1-cities">/v1/cities</h2>
+
+<p>Get cities</p>
 
 <blockquote>
 <p>Code samples</p>
@@ -421,14 +425,14 @@ curl -X get https://api.radario.ru/v1/cities
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>No description</td>
+<td>Specifies the number of rows to return</td>
 </tr>
 <tr>
 <td>offset</td>
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>No description</td>
+<td>Specifies the number of rows to skip</td>
 </tr>
 </tbody></table>
 
@@ -445,6 +449,36 @@ curl -X get https://api.radario.ru/v1/cities
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>OK</td>
+</tr>
+</tbody></table>
+
+<h3 id="attributes">Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>City id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>City name</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>City latitude</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>City longitude</td>
+</tr>
+<tr>
+<td>gmtOffset</td>
+<td>City GMT offset</td>
 </tr>
 </tbody></table>
 
