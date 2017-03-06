@@ -238,8 +238,6 @@
 
 <h2 id="v1-categories">/v1/categories</h2>
 
-<p>Get events category</p>
-
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -297,6 +295,8 @@ curl -X get https://api.radario.ru/v1/categories
 </code></pre>
 <p><code class="prettyprint">GET /v1/categories</code></p>
 
+<p>Get events categories</p>
+
 <h3 id="responses">Responses</h3>
 
 <table><thead>
@@ -336,6 +336,12 @@ curl -X get https://api.radario.ru/v1/categories
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
   </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
@@ -349,8 +355,6 @@ This operation does not require authentication
 <h1 id="cities">Cities</h1>
 
 <h2 id="v1-cities">/v1/cities</h2>
-
-<p>Get cities</p>
 
 <blockquote>
 <p>Code samples</p>
@@ -408,6 +412,8 @@ curl -X get https://api.radario.ru/v1/cities
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 </code></pre>
 <p><code class="prettyprint">GET /v1/cities</code></p>
+
+<p>Get cities</p>
 
 <h3 id="parameters">Parameters</h3>
 
