@@ -1,0 +1,3780 @@
+# Radario.Api v1
+
+
+
+Base URL = http://api.radario.ru/
+
+
+
+
+
+# ApiAccount
+
+## ApiAccount_Create
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X post http://api.radario.ru/internal/create_account
+````
+
+````http
+POST http://api.radario.ru/internal/create_account HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/internal/create_account',
+    method: 'post',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/internal/create_account', { method: 'POST'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.post 'http://api.radario.ru/internal/create_account', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.post('http://api.radario.ru/internal/create_account', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/internal/create_account");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`POST /internal/create_account`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+dto|body|CreateAccountDto|true|No description
+
+
+
+> Body parameter
+
+````json
+{
+  "Name": {
+    "type": "string"
+  },
+  "Email": {
+    "type": "string"
+  },
+  "Description": {
+    "type": "string"
+  },
+  "Permissions": {
+    "format": "int32",
+    "enum": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "type": "integer"
+  }
+}
+````
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## ApiAccount_Get
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/internal/accounts
+````
+
+````http
+GET http://api.radario.ru/internal/accounts HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/internal/accounts',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/internal/accounts', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/internal/accounts', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/internal/accounts', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/internal/accounts");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /internal/accounts`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+limit|query|integer|false|No description
+offset|query|integer|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Categories
+
+## Categories_Get
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/categories
+````
+
+````http
+GET http://api.radario.ru/v1/categories HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/categories',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/categories', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/categories', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/categories', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/categories");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/categories`
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Cities
+
+## Cities_Get
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/cities
+````
+
+````http
+GET http://api.radario.ru/v1/cities HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/cities',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/cities', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/cities', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/cities', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/cities");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/cities`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+limit|query|integer|false|No description
+offset|query|integer|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Company
+
+## Company_Get
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/hosts/{id}
+````
+
+````http
+GET http://api.radario.ru/v1/hosts/{id} HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/hosts/{id}',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/hosts/{id}', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/hosts/{id}', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/hosts/{id}', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/hosts/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/hosts/{id}`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+id|path|integer|true|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Doc
+
+## Doc_Api
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/doc
+````
+
+````http
+GET http://api.radario.ru/v1/doc HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/doc',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/doc', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/doc', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/doc', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/doc");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/doc`
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+[
+  {
+    "label": "string",
+    "subBlocks": []
+  }
+]
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Doc_ErrorCodes
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/doc/errors
+````
+
+````http
+GET http://api.radario.ru/v1/doc/errors HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/doc/errors',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/doc/errors', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/doc/errors', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/doc/errors', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/doc/errors");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/doc/errors`
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+[
+  {
+    "code": 0,
+    "name": "string"
+  }
+]
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Doc_Entities
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/doc/entities
+````
+
+````http
+GET http://api.radario.ru/v1/doc/entities HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/doc/entities',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/doc/entities', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/doc/entities', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/doc/entities', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/doc/entities");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/doc/entities`
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+[
+  {
+    "name": "string",
+    "description": "string",
+    "fields": []
+  }
+]
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Events
+
+## Events_Get
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/events
+````
+
+````http
+GET http://api.radario.ru/v1/events HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/events',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/events', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/events', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/events', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/events");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/events`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+cityid|query|string|false|No description
+placeid|query|string|false|No description
+companyid|query|string|false|No description
+supertagid|query|string|false|No description
+limit|query|integer|false|No description
+offset|query|integer|false|No description
+groupid|query|string|false|No description
+onlywithordercreationavailableviaapi|query|boolean|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Events_GetById
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/events/{eventId}
+````
+
+````http
+GET http://api.radario.ru/v1/events/{eventId} HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/events/{eventId}',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/events/{eventId}', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/events/{eventId}', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/events/{eventId}', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/events/{eventId}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/events/{eventId}`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+eventId|path|integer|true|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Events_GetTicketTypes
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/events/{eventId}/ticket_types_grouped
+````
+
+````http
+GET http://api.radario.ru/v1/events/{eventId}/ticket_types_grouped HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/events/{eventId}/ticket_types_grouped',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/events/{eventId}/ticket_types_grouped', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/events/{eventId}/ticket_types_grouped', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/events/{eventId}/ticket_types_grouped', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/events/{eventId}/ticket_types_grouped");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/events/{eventId}/ticket_types_grouped`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+eventId|path|integer|true|No description
+onlyWithOrderCreationAvailableViaApi|query|boolean|false|No description
+limit|query|integer|false|No description
+offset|query|integer|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Events_GetTickets
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/events/{eventId}/tickets
+````
+
+````http
+GET http://api.radario.ru/v1/events/{eventId}/tickets HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/events/{eventId}/tickets',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/events/{eventId}/tickets', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/events/{eventId}/tickets', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/events/{eventId}/tickets', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/events/{eventId}/tickets");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/events/{eventId}/tickets`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+eventId|path|integer|true|No description
+limit|query|integer|false|No description
+offset|query|integer|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Events_GetOrders
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/events/{eventId}/orders
+````
+
+````http
+GET http://api.radario.ru/v1/events/{eventId}/orders HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/events/{eventId}/orders',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/events/{eventId}/orders', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/events/{eventId}/orders', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/events/{eventId}/orders', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/events/{eventId}/orders");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/events/{eventId}/orders`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+eventId|path|integer|true|No description
+limit|query|integer|false|No description
+offset|query|integer|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Group
+
+## Group_Get
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/hosts/{hostId}/groups
+````
+
+````http
+GET http://api.radario.ru/v1/hosts/{hostId}/groups HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/hosts/{hostId}/groups',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/hosts/{hostId}/groups', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/hosts/{hostId}/groups', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/hosts/{hostId}/groups', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/hosts/{hostId}/groups");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/hosts/{hostId}/groups`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+hostId|path|integer|true|No description
+limit|query|string|false|No description
+offset|query|string|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Orders
+
+## Orders_Reserve
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X post http://api.radario.ru/v1/orders/reserve
+````
+
+````http
+POST http://api.radario.ru/v1/orders/reserve HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/orders/reserve',
+    method: 'post',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/orders/reserve', { method: 'POST'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.post 'http://api.radario.ru/v1/orders/reserve', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.post('http://api.radario.ru/v1/orders/reserve', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/orders/reserve");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`POST /v1/orders/reserve`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+request|body|ReserveOrderRequest|true|No description
+
+
+
+> Body parameter
+
+````json
+{
+  "EventId": 0,
+  "Tickets": [],
+  "Email": "string"
+}
+````
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Orders_Approve
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X post http://api.radario.ru/v1/orders/approve
+````
+
+````http
+POST http://api.radario.ru/v1/orders/approve HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/orders/approve',
+    method: 'post',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/orders/approve', { method: 'POST'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.post 'http://api.radario.ru/v1/orders/approve', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.post('http://api.radario.ru/v1/orders/approve', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/orders/approve");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`POST /v1/orders/approve`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+request|body|OrderApproveRequest|true|No description
+
+
+
+> Body parameter
+
+````json
+{
+  "orderId": 0
+}
+````
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Orders_Update
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X post http://api.radario.ru/v1/orders/update
+````
+
+````http
+POST http://api.radario.ru/v1/orders/update HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/orders/update',
+    method: 'post',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/orders/update', { method: 'POST'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.post 'http://api.radario.ru/v1/orders/update', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.post('http://api.radario.ru/v1/orders/update', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/orders/update");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`POST /v1/orders/update`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+request|body|OrderUpdateRequest|true|No description
+
+
+
+> Body parameter
+
+````json
+{
+  "orderId": 0,
+  "email": "string"
+}
+````
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Orders_Cancel
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X post http://api.radario.ru/v1/orders/cancel
+````
+
+````http
+POST http://api.radario.ru/v1/orders/cancel HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/orders/cancel',
+    method: 'post',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/orders/cancel', { method: 'POST'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.post 'http://api.radario.ru/v1/orders/cancel', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.post('http://api.radario.ru/v1/orders/cancel', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/orders/cancel");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`POST /v1/orders/cancel`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+request|body|OrderCancelRequest|true|No description
+
+
+
+> Body parameter
+
+````json
+{
+  "orderId": 0
+}
+````
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Orders_Refund
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X post http://api.radario.ru/v1/orders/refund
+````
+
+````http
+POST http://api.radario.ru/v1/orders/refund HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/orders/refund',
+    method: 'post',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/orders/refund', { method: 'POST'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.post 'http://api.radario.ru/v1/orders/refund', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.post('http://api.radario.ru/v1/orders/refund', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/orders/refund");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`POST /v1/orders/refund`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+request|body|RefundRequest|true|No description
+
+
+
+> Body parameter
+
+````json
+{
+  "UserOrderId": "string",
+  "TicketNumber": "string",
+  "RefundInitiator": "string",
+  "Comment": "string",
+  "Reason": "string"
+}
+````
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Orders_GetById
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/orders/{id}
+````
+
+````http
+GET http://api.radario.ru/v1/orders/{id} HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/orders/{id}',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/orders/{id}', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/orders/{id}', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/orders/{id}', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/orders/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/orders/{id}`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+id|path|integer|true|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Orders_GetUserOrderInfo
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/host/orders/{orderId}
+````
+
+````http
+GET http://api.radario.ru/host/orders/{orderId} HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/host/orders/{orderId}',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/host/orders/{orderId}', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/host/orders/{orderId}', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/host/orders/{orderId}', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/host/orders/{orderId}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /host/orders/{orderId}`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+orderId|path|integer|true|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Orders_GetUserOrdersInfo
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/host/orders
+````
+
+````http
+GET http://api.radario.ru/host/orders HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/host/orders',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/host/orders', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/host/orders', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/host/orders', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/host/orders");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /host/orders`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+startDate|query|string|false|No description
+endDate|query|string|false|No description
+eventId|query|string|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Places
+
+## Places_GetByCity
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/places
+````
+
+````http
+GET http://api.radario.ru/v1/places HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/places',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/places', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/places', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/places', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/places");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/places`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+cityId|query|integer|true|No description
+onlyWithActualEvents|query|boolean|false|No description
+limit|query|integer|false|No description
+offset|query|integer|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Places_GetById
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/places/{id}
+````
+
+````http
+GET http://api.radario.ru/v1/places/{id} HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/places/{id}',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/places/{id}', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/places/{id}', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/places/{id}', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/places/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/places/{id}`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+id|path|integer|true|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Promocodes
+
+## Promocodes_Get
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/promocodes
+````
+
+````http
+GET http://api.radario.ru/v1/promocodes HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/promocodes',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/promocodes', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/promocodes', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/promocodes', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/promocodes");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/promocodes`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+code|query|string|true|No description
+companyId|query|integer|true|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# RefCampaign
+
+## RefCampaign_GetStatistics
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/ref-campaigns/statistics/{id}
+````
+
+````http
+GET http://api.radario.ru/v1/ref-campaigns/statistics/{id} HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/ref-campaigns/statistics/{id}',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/ref-campaigns/statistics/{id}', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/ref-campaigns/statistics/{id}', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/ref-campaigns/statistics/{id}', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/ref-campaigns/statistics/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/ref-campaigns/statistics/{id}`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+id|path|integer|true|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## RefCampaign_GetByCompany
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/ref-campaigns/get-by-company/{companyId}
+````
+
+````http
+GET http://api.radario.ru/v1/ref-campaigns/get-by-company/{companyId} HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/ref-campaigns/get-by-company/{companyId}',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/ref-campaigns/get-by-company/{companyId}', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/ref-campaigns/get-by-company/{companyId}', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/ref-campaigns/get-by-company/{companyId}', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/ref-campaigns/get-by-company/{companyId}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/ref-campaigns/get-by-company/{companyId}`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+companyId|path|integer|true|No description
+eventId|query|string|false|No description
+limit|query|integer|false|No description
+offset|query|integer|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## RefCampaign_Save
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X post http://api.radario.ru/v1/ref-campaigns/save
+````
+
+````http
+POST http://api.radario.ru/v1/ref-campaigns/save HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/ref-campaigns/save',
+    method: 'post',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/ref-campaigns/save', { method: 'POST'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.post 'http://api.radario.ru/v1/ref-campaigns/save', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.post('http://api.radario.ru/v1/ref-campaigns/save', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/ref-campaigns/save");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`POST /v1/ref-campaigns/save`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+refCampaignDto|body|RefCampaignDto|true|No description
+
+
+
+> Body parameter
+
+````json
+{
+  "Id": "string",
+  "Title": "string",
+  "Description": "string",
+  "RewardLimit": 0,
+  "Reward": 0,
+  "CompanyId": 0,
+  "EventId": "string",
+  "DiscountValue": 0,
+  "ValidFrom": "2017-03-06T06:57:23Z",
+  "ValidUntil": "2017-03-06T06:57:23Z",
+  "Circulation": 0,
+  "IsDeleted": true
+}
+````
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## RefCampaign_AddUsersToRefCampaign
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X post http://api.radario.ru/v1/ref-campaigns/add-users
+````
+
+````http
+POST http://api.radario.ru/v1/ref-campaigns/add-users HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/ref-campaigns/add-users',
+    method: 'post',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/ref-campaigns/add-users', { method: 'POST'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.post 'http://api.radario.ru/v1/ref-campaigns/add-users', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.post('http://api.radario.ru/v1/ref-campaigns/add-users', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/ref-campaigns/add-users");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`POST /v1/ref-campaigns/add-users`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+request|body|AddUsersToCampaignRequest|true|No description
+
+
+
+> Body parameter
+
+````json
+{
+  "CampaignId": 0,
+  "UserIds": [
+    0
+  ]
+}
+````
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## RefCampaign_Delete
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X delete http://api.radario.ru/v1/ref-campaigns/{id}/delete
+````
+
+````http
+DELETE http://api.radario.ru/v1/ref-campaigns/{id}/delete HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/ref-campaigns/{id}/delete',
+    method: 'delete',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/ref-campaigns/{id}/delete', { method: 'DELETE'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.delete 'http://api.radario.ru/v1/ref-campaigns/{id}/delete', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.delete('http://api.radario.ru/v1/ref-campaigns/{id}/delete', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/ref-campaigns/{id}/delete");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`DELETE /v1/ref-campaigns/{id}/delete`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+id|path|integer|true|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## RefCampaign_Get
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/ref-campaigns/{id}
+````
+
+````http
+GET http://api.radario.ru/v1/ref-campaigns/{id} HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/ref-campaigns/{id}',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/ref-campaigns/{id}', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/ref-campaigns/{id}', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/ref-campaigns/{id}', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/ref-campaigns/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/ref-campaigns/{id}`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+id|path|integer|true|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Schemes
+
+## Schemes_GetByPlaceId
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/schemes
+````
+
+````http
+GET http://api.radario.ru/v1/schemes HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/schemes',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/schemes', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/schemes', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/schemes', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/schemes");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/schemes`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+placeId|query|integer|true|No description
+limit|query|integer|false|No description
+offset|query|integer|false|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## Schemes_GetById
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/schemes/{id}
+````
+
+````http
+GET http://api.radario.ru/v1/schemes/{id} HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/schemes/{id}',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/schemes/{id}', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/schemes/{id}', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/schemes/{id}', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/schemes/{id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/schemes/{id}`
+
+### Parameters
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+id|path|integer|true|No description
+
+
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{
+  "type": "object",
+  "properties": {
+    "Success": {
+      "type": "boolean"
+    }
+  }
+}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+# Search
+
+## Search_Search
+
+> Code samples
+
+````shell
+# You can also use wget
+curl -X get http://api.radario.ru/v1/search
+````
+
+````http
+GET http://api.radario.ru/v1/search HTTP/1.1
+Host: api.radario.ru
+Content-Type: application/json
+Accept: application/json
+````
+
+````html
+<script>
+  $.ajax({
+    url: 'http://api.radario.ru/v1/search',
+    method: 'get',
+    success: function(data) {
+      console.log(JSON.stringify(data));
+    }
+  })
+</script>
+````
+
+````javascript
+const request = require('node-fetch');
+fetch('http://api.radario.ru/v1/search', { method: 'GET'})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+````
+
+````ruby
+require 'rest-client'
+require 'json'
+
+result = RestClient.get 'http://api.radario.ru/v1/search', params:
+  {
+    # TODO
+  }
+
+p JSON.parse(result)
+````
+
+````python
+import requests
+
+r = requests.get('http://api.radario.ru/v1/search', params={
+  # TODO
+})
+
+print r.json()
+````
+
+````java
+URL obj = new URL("http://api.radario.ru/v1/search");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+````
+
+`GET /v1/search`
+
+### Responses
+
+Status|Meaning|Description
+---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK
+
+> Example responses
+
+````json
+{}
+````
+<aside class="success">
+This operation does not require authentication
+</aside>
+
