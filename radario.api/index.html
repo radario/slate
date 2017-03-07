@@ -3039,6 +3039,19 @@ curl -X post https://api.radario.ru/v1/orders/refund
 </code></pre>
 <p><code class="prettyprint">POST /v1/orders/refund</code></p>
 
+<p>Refund order</p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"UserOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"TicketNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"RefundInitiator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -3055,34 +3068,37 @@ curl -X post https://api.radario.ru/v1/orders/refund
 <td>body</td>
 <td>RefundRequest</td>
 <td>true</td>
-<td>No description</td>
+<td>request object</td>
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Body parameter</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"UserOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"TicketNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"RefundInitiator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="responses">Responses</h3>
+<h3 id="attributes">Attributes</h3>
 
 <table><thead>
 <tr>
-<th>Status</th>
-<th>Meaning</th>
+<th>Attribute</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>200</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>OK</td>
+<td>userOrderId</td>
+<td>Order id</td>
+</tr>
+<tr>
+<td>ticketNumber</td>
+<td>Ticket number</td>
+</tr>
+<tr>
+<td>refundInitiator</td>
+<td>RefundInitiator (e.g user, company)</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>Comment</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>Refund reason</td>
 </tr>
 </tbody></table>
 
@@ -3149,6 +3165,84 @@ curl -X post https://api.radario.ru/v1/orders/refund
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<h3 id="responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+</tr>
+</tbody></table>
+
+<h3 id="attributes">Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>RefundId</td>
+<td>Refund id</td>
+</tr>
+<tr>
+<td>CompanyId</td>
+<td>Company id</td>
+</tr>
+<tr>
+<td>RefundedMoney</td>
+<td>Refunded money</td>
+</tr>
+<tr>
+<td>RefundedUserCash</td>
+<td>Refunded user cash money</td>
+</tr>
+<tr>
+<td>RefundMethod</td>
+<td>Refund method code</td>
+</tr>
+<tr>
+<td>RefundType</td>
+<td>Refund type code</td>
+</tr>
+<tr>
+<td>Tickets</td>
+<td>Ticket list</td>
+</tr>
+<tr>
+<td>Tickets[i].TicketTypeId</td>
+<td>TicketType id</td>
+</tr>
+<tr>
+<td>Tickets[i].SeatNumber</td>
+<td>Ticket seat number</td>
+</tr>
+<tr>
+<td>Tickets[i].SeatInfo</td>
+<td>Ticket seat info</td>
+</tr>
+<tr>
+<td>Tickets[i].Price</td>
+<td>Ticket price</td>
+</tr>
+<tr>
+<td>Tickets[i].Number</td>
+<td>Ticket number</td>
+</tr>
+<tr>
+<td>TicketNumbers</td>
+<td>Numbers of ticket sepparated by commas</td>
+</tr>
+</tbody></table>
+
 <aside class="success">
 This operation does not require authentication
 </aside>
