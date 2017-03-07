@@ -1304,6 +1304,8 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 </code></pre>
 <p><code class="prettyprint">GET /v1/events/{eventId}/ticket_types</code></p>
 
+<p>Get event TicketType item</p>
+
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -1320,31 +1322,67 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <td>path</td>
 <td>integer</td>
 <td>true</td>
-<td>No description</td>
+<td>Event id</td>
 </tr>
 <tr>
 <td>onlyWithOrderCreationAvailableViaApi</td>
 <td>query</td>
 <td>boolean</td>
 <td>false</td>
-<td>No description</td>
+<td>Should specify true to return events with permission to create</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>No description</td>
+<td>Specifies the number of items to return</td>
 </tr>
 <tr>
 <td>offset</td>
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>No description</td>
+<td>Specifies the number of items to skip</td>
 </tr>
 </tbody></table>
 
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ticketCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"soldTicketCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"withSeats"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"series"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seatBeginNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seatEndNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zoneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"seats"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"isOccupied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rowName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"seatName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"exists"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="responses">Responses</h3>
 
 <table><thead>
@@ -1361,17 +1399,80 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Example responses</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h3 id="attributes">Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>TicketType id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>TicketType title</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Ticket price</td>
+</tr>
+<tr>
+<td>ticket</td>
+<td>Ticket amount</td>
+</tr>
+<tr>
+<td>soldTicketCount</td>
+<td>Sold ticket amount</td>
+</tr>
+<tr>
+<td>withSeats</td>
+<td>Indicate if tickets of TicketType with seat</td>
+</tr>
+<tr>
+<td>series</td>
+<td>Series of tickets</td>
+</tr>
+<tr>
+<td>seatBeginNumber</td>
+<td>Indicate seat number range (from)</td>
+</tr>
+<tr>
+<td>seatEndNumber</td>
+<td>Indicate seat number range (to)</td>
+</tr>
+<tr>
+<td>zoneId</td>
+<td>Id of seats zone</td>
+</tr>
+<tr>
+<td>seats</td>
+<td>Array of seat</td>
+</tr>
+<tr>
+<td>seats.isOccupied</td>
+<td>Indicate if seat is occupied</td>
+</tr>
+<tr>
+<td>seats.number</td>
+<td>Number of seat</td>
+</tr>
+<tr>
+<td>seats.rowName</td>
+<td>Name of seat row</td>
+</tr>
+<tr>
+<td>seats.seatName</td>
+<td>Name of seat</td>
+</tr>
+<tr>
+<td>seats.exists</td>
+<td>Indicate if seat is exist on grid</td>
+</tr>
+</tbody></table>
+
 <aside class="success">
 This operation does not require authentication
 </aside>
