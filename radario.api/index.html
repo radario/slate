@@ -3306,6 +3306,8 @@ curl -X get https://api.radario.ru/v1/orders/<span class="o">{</span>id<span cla
 </code></pre>
 <p><code class="prettyprint">GET /v1/orders/{id}</code></p>
 
+<p>Get order by id</p>
+
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -3322,10 +3324,50 @@ curl -X get https://api.radario.ru/v1/orders/<span class="o">{</span>id<span cla
 <td>path</td>
 <td>integer</td>
 <td>true</td>
-<td>No description</td>
+<td>Order id</td>
 </tr>
 </tbody></table>
 
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"IsPaid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"EventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"CreationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"datetime"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"TicketCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"BaseAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Tickets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TicketTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"UserOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TicketTypeTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TicketTypeZoneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsUsed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"BarcodeKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SeatNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SeatName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"RowName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ParticipantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SeatInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"OrderNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"DistributionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"PaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="responses">Responses</h3>
 
 <table><thead>
@@ -3342,17 +3384,116 @@ curl -X get https://api.radario.ru/v1/orders/<span class="o">{</span>id<span cla
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Example responses</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h3 id="attributes">Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Order id</td>
+</tr>
+<tr>
+<td>isPaid</td>
+<td>Indicate if order is paid</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>Order event id</td>
+</tr>
+<tr>
+<td>creationDate</td>
+<td>Order creation datetime</td>
+</tr>
+<tr>
+<td>ticketCount</td>
+<td>Order ticket amount</td>
+</tr>
+<tr>
+<td>baseAmount</td>
+<td>Summarу tickets price</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Order amount (with considering debit from user cash)</td>
+</tr>
+<tr>
+<td>orderNumber</td>
+<td>Order number</td>
+</tr>
+<tr>
+<td>distributionType</td>
+<td>Order DistributionType</td>
+</tr>
+<tr>
+<td>paymentType</td>
+<td>Order PaymentType</td>
+</tr>
+<tr>
+<td>tickets</td>
+<td>List of tickets</td>
+</tr>
+<tr>
+<td>tickets[i].id</td>
+<td>Ticket id</td>
+</tr>
+<tr>
+<td>tickets[i].ticketTypeId</td>
+<td>TicketType id</td>
+</tr>
+<tr>
+<td>tickets[i].userOrderId</td>
+<td>UserOrder id</td>
+</tr>
+<tr>
+<td>tickets[i].ticketTypeTitle</td>
+<td>TicketType title</td>
+</tr>
+<tr>
+<td>tickets[i].ticketTypeZoneId</td>
+<td>TicketType zone id</td>
+</tr>
+<tr>
+<td>tickets[i].number</td>
+<td>Ticket number</td>
+</tr>
+<tr>
+<td>tickets[i].price</td>
+<td>Ticket price</td>
+</tr>
+<tr>
+<td>tickets[i].isUsed</td>
+<td>Indicate if ticket is used</td>
+</tr>
+<tr>
+<td>tickets[i].barcodeKey</td>
+<td>Ticket barcode key</td>
+</tr>
+<tr>
+<td>tickets[i].seatNumber</td>
+<td>Ticket seat number</td>
+</tr>
+<tr>
+<td>tickets[i].seatName</td>
+<td>Ticket seat name</td>
+</tr>
+<tr>
+<td>tickets[i].rowName</td>
+<td>Ticket row name</td>
+</tr>
+<tr>
+<td>tickets[i].participantName</td>
+<td>Ticket participant name</td>
+</tr>
+<tr>
+<td>tickets[i].seatInfo</td>
+<td>Ticket customer name</td>
+</tr>
+</tbody></table>
+
 <aside class="success">
 This operation does not require authentication
 </aside>
