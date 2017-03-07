@@ -1051,6 +1051,8 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 </code></pre>
 <p><code class="prettyprint">GET /v1/events/{eventId}</code></p>
 
+<p>Get event by id</p>
+
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -1067,10 +1069,52 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <td>path</td>
 <td>integer</td>
 <td>true</td>
-<td>No description</td>
+<td>Event id</td>
 </tr>
 </tbody></table>
 
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"beginDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"datetime"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"datetime"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"salesStopped"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"videoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"placeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"placeTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"placeAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"companyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"companyTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"maxPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"placeSchemeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ticketCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gmtOffset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"TotalCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="responses">Responses</h3>
 
 <table><thead>
@@ -1087,17 +1131,116 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Example responses</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h3 id="attributes">Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Event id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Event title</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Event description</td>
+</tr>
+<tr>
+<td>age</td>
+<td>Allowable age</td>
+</tr>
+<tr>
+<td>beginDate</td>
+<td>Event begining date</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>Event ending date</td>
+</tr>
+<tr>
+<td>salesStopped</td>
+<td>Should specify to return events whose sales stopped</td>
+</tr>
+<tr>
+<td>videoUrl</td>
+<td>Event video URL</td>
+</tr>
+<tr>
+<td>images</td>
+<td>Event images</td>
+</tr>
+<tr>
+<td>category</td>
+<td>Event category</td>
+</tr>
+<tr>
+<td>placeId</td>
+<td>Id of place where event take place</td>
+</tr>
+<tr>
+<td>placeTitle</td>
+<td>Title of place where event take place</td>
+</tr>
+<tr>
+<td>placeAddress</td>
+<td>Address of place where event take place</td>
+</tr>
+<tr>
+<td>companyId</td>
+<td>Id of company that organize event</td>
+</tr>
+<tr>
+<td>companyTitle</td>
+<td>Title of company that organize event</td>
+</tr>
+<tr>
+<td>minPrice</td>
+<td>Minimum price of tickets on event</td>
+</tr>
+<tr>
+<td>maxPrice</td>
+<td>Maximum price of tickets on event</td>
+</tr>
+<tr>
+<td>cityId</td>
+<td>Id of city where event take place</td>
+</tr>
+<tr>
+<td>cityName</td>
+<td>Name of city where event take place</td>
+</tr>
+<tr>
+<td>placeSchemeId</td>
+<td>Id of event place schema</td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>Id of event group</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Payment currency</td>
+</tr>
+<tr>
+<td>ticketCount</td>
+<td>Count of event tickets</td>
+</tr>
+<tr>
+<td>gmtOffset</td>
+<td>GMT offset of city where event take place</td>
+</tr>
+<tr>
+<td>totalCount</td>
+<td>Total count of items</td>
+</tr>
+</tbody></table>
+
 <aside class="success">
 This operation does not require authentication
 </aside>
