@@ -2499,6 +2499,15 @@ curl -X post https://api.radario.ru/v1/orders/approve
 </code></pre>
 <p><code class="prettyprint">POST /v1/orders/approve</code></p>
 
+<p>Approve order payment</p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -2515,17 +2524,24 @@ curl -X post https://api.radario.ru/v1/orders/approve
 <td>body</td>
 <td>OrderApproveRequest</td>
 <td>true</td>
-<td>No description</td>
+<td>Request object</td>
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Body parameter</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h3 id="attributes">Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>Order Id</td>
+</tr>
+</tbody></table>
+
 <h3 id="responses">Responses</h3>
 
 <table><thead>
