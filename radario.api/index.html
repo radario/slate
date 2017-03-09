@@ -4576,6 +4576,8 @@ curl -X get https://api.radario.ru/v1/schemes
 </code></pre>
 <p><code class="prettyprint">GET /v1/schemes</code></p>
 
+<p>Get place schemes by place id</p>
+
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -4592,24 +4594,64 @@ curl -X get https://api.radario.ru/v1/schemes
 <td>query</td>
 <td>integer</td>
 <td>true</td>
-<td>No description</td>
+<td>Place id</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>No description</td>
+<td>Specifies the number of items to return (default 10)</td>
 </tr>
 <tr>
 <td>offset</td>
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>No description</td>
+<td>Specifies the number of items to skip</td>
 </tr>
 </tbody></table>
 
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"seatCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"zones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"withSeats"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"rowCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"colCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"seats"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"rowName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"seatName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                            </span><span class="s2">"exists"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="responses">Responses</h3>
 
 <table><thead>
@@ -4626,17 +4668,76 @@ curl -X get https://api.radario.ru/v1/schemes
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Example responses</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h3 id="attributes">Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Place schema id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Place schema name</td>
+</tr>
+<tr>
+<td>seatCount</td>
+<td>Seats amount</td>
+</tr>
+<tr>
+<td>zones</td>
+<td>List of zone</td>
+</tr>
+<tr>
+<td>zones[i].Id</td>
+<td>Zone id</td>
+</tr>
+<tr>
+<td>zones[i].Name</td>
+<td>Zone name</td>
+</tr>
+<tr>
+<td>zones[i].WithSeats</td>
+<td>Indicate if zone with seat</td>
+</tr>
+<tr>
+<td>zones[i].RowCount</td>
+<td>Amount of rows in the zone</td>
+</tr>
+<tr>
+<td>zones[i].ColCount</td>
+<td>Amount of columns in the zone</td>
+</tr>
+<tr>
+<td>zones[i].Seats</td>
+<td>List of zone seats</td>
+</tr>
+<tr>
+<td>zones[i].Seats[j].Number</td>
+<td>Seat number</td>
+</tr>
+<tr>
+<td>zones[i].Seats[j].RowName</td>
+<td>Seat row name</td>
+</tr>
+<tr>
+<td>zones[i].Seats[j].RowName</td>
+<td>Seat name</td>
+</tr>
+<tr>
+<td>zones[i].Seats[j].Exists</td>
+<td>Indicate if seat is exist on grid</td>
+</tr>
+<tr>
+<td>version</td>
+<td>Scheme depiction (Html (1) or Svg (2))</td>
+</tr>
+</tbody></table>
+
 <aside class="success">
 This operation does not require authentication
 </aside>
