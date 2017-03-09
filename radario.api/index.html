@@ -3557,6 +3557,8 @@ curl -X get https://api.radario.ru/host/orders/<span class="o">{</span>orderId<s
 </code></pre>
 <p><code class="prettyprint">GET /host/orders/{orderId}</code></p>
 
+<p>Get order complex info by id</p>
+
 <h3 id="parameters">Parameters</h3>
 
 <table><thead>
@@ -3573,10 +3575,57 @@ curl -X get https://api.radario.ru/host/orders/<span class="o">{</span>orderId<s
 <td>path</td>
 <td>integer</td>
 <td>true</td>
-<td>No description</td>
+<td>Order id</td>
 </tr>
 </tbody></table>
 
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"datetime"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"promoCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"psOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"partnerTrack"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"tickets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"participantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"zoneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="responses">Responses</h3>
 
 <table><thead>
@@ -3593,17 +3642,108 @@ curl -X get https://api.radario.ru/host/orders/<span class="o">{</span>orderId<s
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Example responses</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"Success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"Error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h3 id="attributes">Attributes</h3>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Order id</td>
+</tr>
+<tr>
+<td>paymentType</td>
+<td>Payment type (always &lsquo;External&rsquo;)</td>
+</tr>
+<tr>
+<td>paymentDate</td>
+<td>Payment datetime</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Order amount</td>
+</tr>
+<tr>
+<td>promoCode</td>
+<td>Order promo code</td>
+</tr>
+<tr>
+<td>psOrderId</td>
+<td>External payment system payment id</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Customer info</td>
+</tr>
+<tr>
+<td>user.Email</td>
+<td>Customer email</td>
+</tr>
+<tr>
+<td>event</td>
+<td>Event info</td>
+</tr>
+<tr>
+<td>event.Id</td>
+<td>Event id</td>
+</tr>
+<tr>
+<td>event.Title</td>
+<td>Event title</td>
+</tr>
+<tr>
+<td>partnerTrack</td>
+<td>Partner info</td>
+</tr>
+<tr>
+<td>partnerTrack.Id</td>
+<td>Partner id</td>
+</tr>
+<tr>
+<td>partnerTrack.Email</td>
+<td>Partner email</td>
+</tr>
+<tr>
+<td>tickets</td>
+<td>List of tickets info</td>
+</tr>
+<tr>
+<td>tickets[i].Id</td>
+<td>Ticket id</td>
+</tr>
+<tr>
+<td>tickets[i].Barcode</td>
+<td>Ticket barcode</td>
+</tr>
+<tr>
+<td>tickets[i].ParticipantName</td>
+<td>Ticket participant name</td>
+</tr>
+<tr>
+<td>tickets[i].Price</td>
+<td>Ticket price</td>
+</tr>
+<tr>
+<td>tickets[i].Type</td>
+<td>Ticket TicketType info</td>
+</tr>
+<tr>
+<td>tickets[i].Type.Id</td>
+<td>TicketType id</td>
+</tr>
+<tr>
+<td>tickets[i].Type.Title</td>
+<td>TicketType title</td>
+</tr>
+<tr>
+<td>tickets[i].Type.ZoneId</td>
+<td>TicketType zone id</td>
+</tr>
+</tbody></table>
+
 <aside class="success">
 This operation does not require authentication
 </aside>
