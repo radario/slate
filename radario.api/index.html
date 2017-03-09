@@ -676,10 +676,6 @@ curl -X get https://api.radario.ru/v1/hosts/<span class="o">{</span>id<span clas
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
-</aside>
-
 <h1 id="events">Events</h1>
 
 <h2 id="v1-events">/v1/events</h2>
@@ -980,10 +976,6 @@ curl -X get https://api.radario.ru/v1/events
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
-</aside>
-
 <h2 id="v1-events-eventid">/v1/events/{eventId}</h2>
 
 <blockquote>
@@ -1233,10 +1225,6 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 </tr>
 </tbody></table>
 
-<aside class="success">
-This operation does not require authentication
-</aside>
-
 <h2 id="v1-events-eventid-ticket_types">/v1/events/{eventId}/ticket_types</h2>
 
 <blockquote>
@@ -1444,30 +1432,26 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <td>List of seat</td>
 </tr>
 <tr>
-<td>seats[i].isOccupied</td>
+<td>seats[i].IsOccupied</td>
 <td>Indicate if seat is occupied</td>
 </tr>
 <tr>
-<td>seats[i].number</td>
+<td>seats[i].Number</td>
 <td>Number of seat</td>
 </tr>
 <tr>
-<td>seats[i].rowName</td>
+<td>seats[i].RowName</td>
 <td>Name of seat row</td>
 </tr>
 <tr>
-<td>seats[i].seatName</td>
+<td>seats[i].SeatName</td>
 <td>Name of seat</td>
 </tr>
 <tr>
-<td>seats[i].exists</td>
+<td>seats[i].Exists</td>
 <td>Indicate if seat is exist on grid</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-This operation does not require authentication
-</aside>
 
 <h2 id="v1-events-eventid-tickets">/v1/events/{eventId}/tickets</h2>
 
