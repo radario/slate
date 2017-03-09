@@ -3089,7 +3089,7 @@ curl -X post https://api.radario.ru/v1/orders/refund
 </tr>
 <tr>
 <td>refundInitiator</td>
-<td>RefundInitiator (e.g user, company)</td>
+<td>Refund initiator. Allowed values: &lsquo;User&rsquo;, &lsquo;Company&rsquo;, &lsquo;null&rsquo;</td>
 </tr>
 <tr>
 <td>comment</td>
@@ -3206,11 +3206,11 @@ curl -X post https://api.radario.ru/v1/orders/refund
 </tr>
 <tr>
 <td>RefundMethod</td>
-<td>Refund method code</td>
+<td>Refund method code. Always &lsquo;ExternalApi&rsquo; (7)</td>
 </tr>
 <tr>
 <td>RefundType</td>
-<td>Refund type code</td>
+<td>Refund type code. Always &lsquo;Order&rsquo; (2)</td>
 </tr>
 <tr>
 <td>Tickets</td>
