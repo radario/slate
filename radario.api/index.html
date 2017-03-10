@@ -427,7 +427,7 @@ curl -X get https://api.radario.ru/v1/cities
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>Specifies the number of items to return</td>
+<td>Specifies the number of items to return (default 30)</td>
 </tr>
 <tr>
 <td>offset</td>
@@ -783,7 +783,7 @@ curl -X get https://api.radario.ru/v1/events
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>Specifies the number of items to return</td>
+<td>Specifies the number of items to return (default 20)</td>
 </tr>
 <tr>
 <td>offset</td>
@@ -1311,7 +1311,7 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>Specifies the number of items to return</td>
+<td>Specifies the number of items to return (default 30)</td>
 </tr>
 <tr>
 <td>offset</td>
@@ -1341,13 +1341,14 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
         </span><span class="s2">"seatEndNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"zoneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"seats"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"isOccupied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"rowName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"seatName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"exists"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="w">
-        </span><span class="p">}]</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"isOccupied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rowName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"seatName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"exists"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
@@ -1532,7 +1533,7 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>Specifies the number of items to return</td>
+<td>Specifies the number of items to return (default 30)</td>
 </tr>
 <tr>
 <td>offset</td>
@@ -1744,7 +1745,7 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <td>query</td>
 <td>integer</td>
 <td>false</td>
-<td>Specifies the number of items to return</td>
+<td>Specifies the number of items to return (default 30)</td>
 </tr>
 <tr>
 <td>offset</td>
@@ -2016,7 +2017,7 @@ curl -X get https://api.radario.ru/v1/hosts/<span class="o">{</span>hostId<span 
 <td>query</td>
 <td>string</td>
 <td>false</td>
-<td>Specifies the number of items to return</td>
+<td>Specifies the number of items to return (default 100)</td>
 </tr>
 <tr>
 <td>offset</td>
@@ -2034,12 +2035,13 @@ curl -X get https://api.radario.ru/v1/hosts/<span class="o">{</span>hostId<span 
   </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"hostId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ticketCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
-    </span><span class="p">}],</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hostId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ticketCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
     </span><span class="s2">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2294,7 +2296,7 @@ curl -X post https://api.radario.ru/v1/orders/reserve
 </thead><tbody>
 <tr>
 <td>order</td>
-<td>order info</td>
+<td>Order info</td>
 </tr>
 <tr>
 <td>order.Id</td>
@@ -2396,10 +2398,6 @@ curl -X post https://api.radario.ru/v1/orders/reserve
 <td>order.Tickets[i].seatInfo</td>
 <td>Ticket customer name</td>
 </tr>
-<tr>
-<td>paymentUrl</td>
-<td>Url to pay order</td>
-</tr>
 </tbody></table>
 
 <aside class="notice">
@@ -2471,7 +2469,7 @@ curl -X post https://api.radario.ru/v1/orders/approve
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="parameters">Parameters</h3>
@@ -2602,7 +2600,7 @@ curl -X post https://api.radario.ru/v1/orders/update
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -2622,7 +2620,7 @@ curl -X post https://api.radario.ru/v1/orders/update
 <td>body</td>
 <td>OrderUpdateRequest</td>
 <td>true</td>
-<td>request object</td>
+<td>Request object</td>
 </tr>
 </tbody></table>
 
@@ -2880,7 +2878,7 @@ curl -X post https://api.radario.ru/v1/orders/cancel
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="parameters">Parameters</h3>
@@ -3034,7 +3032,7 @@ curl -X post https://api.radario.ru/v1/orders/refund
 <td>body</td>
 <td>RefundRequest</td>
 <td>true</td>
-<td>request object</td>
+<td>Request object</td>
 </tr>
 </tbody></table>
 
