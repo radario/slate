@@ -2461,7 +2461,7 @@ curl -X post https://api.radario.ru/v1/orders/add_pre_reserved_seat
 <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 </code></pre>
-<p><code class="prettyprint">POST /v1/orders/remove_pre_reserved_seat</code></p>
+<p><code class="prettyprint">POST /v1/orders/add_pre_reserved_seat</code></p>
 
 <p>Reserve seat to pay order</p>
 
@@ -2491,7 +2491,8 @@ curl -X post https://api.radario.ru/v1/orders/add_pre_reserved_seat
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"EventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"TicketTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"SeatNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+  </span><span class="s2">"SeatNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"TimeToLive"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="attributes">Attributes</h3>
@@ -2517,6 +2518,11 @@ curl -X post https://api.radario.ru/v1/orders/add_pre_reserved_seat
 <td>seatNumber</td>
 <td>true</td>
 <td>Seat number</td>
+</tr>
+<tr>
+<td>timeToLive</td>
+<td>false</td>
+<td>Reservation lifetime in minutes. Default value - 15min</td>
 </tr>
 </tbody></table>
 
