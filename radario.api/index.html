@@ -838,6 +838,8 @@ curl -X get https://api.radario.ru/v1/events
             </span><span class="s2">"placeAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"companyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"companyTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eventProviderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"eventProviderName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"minPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"maxPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"cityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
@@ -940,6 +942,14 @@ curl -X get https://api.radario.ru/v1/events
 <tr>
 <td>companyTitle</td>
 <td>Title of company that organize event</td>
+</tr>
+<tr>
+<td>eventProviderId</td>
+<td>Id of event provider that organize event</td>
+</tr>
+<tr>
+<td>eventProviderName</td>
+<td>Name of event provider that organize event</td>
 </tr>
 <tr>
 <td>minPrice</td>
@@ -1085,6 +1095,8 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
     </span><span class="s2">"placeAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"companyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"companyTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eventProviderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"eventProviderName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"minPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"maxPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"cityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
@@ -1184,6 +1196,14 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <tr>
 <td>companyTitle</td>
 <td>Title of company that organize event</td>
+</tr>
+<tr>
+<td>eventProviderId</td>
+<td>Id of event provider that organize event</td>
+</tr>
+<tr>
+<td>eventProviderName</td>
+<td>Name of event provider that organize event</td>
 </tr>
 <tr>
 <td>minPrice</td>
