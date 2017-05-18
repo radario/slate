@@ -4865,7 +4865,7 @@ curl -X get https://api.radario.ruv1/tickets/<span class="o">{</span>ticketId<sp
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.radario.ru/v1/tickets/{ticketId}/pdf'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.radario.ru/v1/tickets/{ticketId}/pdf'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
   <span class="c"># TODO</span>
 <span class="p">})</span>
 
@@ -4895,38 +4895,6 @@ curl -X get https://api.radario.ruv1/tickets/<span class="o">{</span>ticketId<sp
   </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<h3 id="parameters">Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>In</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>request</td>
-<td>body</td>
-<td>OrderSendRequest</td>
-<td>true</td>
-<td>Request object</td>
-</tr>
-</tbody></table>
-
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>orderId</td>
-<td>Order id</td>
-</tr>
-</tbody></table>
-
 <h3 id="responses">Responses</h3>
 
 <table><thead>
