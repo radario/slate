@@ -3966,7 +3966,12 @@ curl -X post https://api.radario.ru/v1/orders/refund
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"ticketTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"seatNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"seatInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"seatInfo"</span><span class="p">:</span><span class="w"> 
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"rowName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"colName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"zoneName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
             </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">,</span><span class="w">
 
         </span><span class="p">}</span><span class="w">
@@ -4042,6 +4047,18 @@ curl -X post https://api.radario.ru/v1/orders/refund
 <tr>
 <td>Tickets[i].SeatInfo</td>
 <td>Ticket seat info</td>
+</tr>
+<tr>
+<td>Tickets[i].SeatInfo.RowName</td>
+<td>Ticket seat row name</td>
+</tr>
+<tr>
+<td>Tickets[i].SeatInfo.ColName</td>
+<td>Ticket seat column name</td>
+</tr>
+<tr>
+<td>Tickets[i].SeatInfo.ZoneName</td>
+<td>Ticket seat zone name</td>
 </tr>
 <tr>
 <td>Tickets[i].Price</td>
