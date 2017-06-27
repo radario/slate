@@ -2644,7 +2644,16 @@ curl -X post https://api.radario.ru/v1/orders/reserve
     </span><span class="s2">"SeatNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ParticipantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
   </span><span class="p">}],</span><span class="w">
-  </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"PartnerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"UtmData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"UtmSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"UtmMedium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"UtmTerm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"UtmContent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"UtmCampaign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"UtmUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="attributes">Attributes</h3>
@@ -2673,11 +2682,43 @@ curl -X post https://api.radario.ru/v1/orders/reserve
 </tr>
 <tr>
 <td>tickets[i].SeatNumber</td>
-<td>Seat number</td>
+<td>(Optional for tickets without seats) Seat number</td>
 </tr>
 <tr>
 <td>tickets[i].ParticipantName</td>
-<td>Participant name</td>
+<td>(Optional) Participant name</td>
+</tr>
+<tr>
+<td>PartnerId</td>
+<td>(Optional) Partner ID</td>
+</tr>
+<tr>
+<td>UtmData</td>
+<td>(Optional) List of UTM Tracking tags.</td>
+</tr>
+<tr>
+<td>UtmData.UtmSource</td>
+<td>(Required if UtmData is present) utm-source of request</td>
+</tr>
+<tr>
+<td>UtmData.UtmMedium</td>
+<td>utm-medium of request</td>
+</tr>
+<tr>
+<td>UtmData.UtmTerm</td>
+<td>utm-term of request</td>
+</tr>
+<tr>
+<td>UtmData.UtmContent</td>
+<td>utm-content of request</td>
+</tr>
+<tr>
+<td>UtmData.UtmCampaign</td>
+<td>utm-campaign of request</td>
+</tr>
+<tr>
+<td>UtmData.UtmUserId</td>
+<td>utm-userid of requester</td>
 </tr>
 </tbody></table>
 
