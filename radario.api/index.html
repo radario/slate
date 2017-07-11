@@ -1604,6 +1604,7 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
         </span><span class="s2">"ticketTypeZoneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"isUsed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"barcodeKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"seatNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -1671,6 +1672,10 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <tr>
 <td>price</td>
 <td>Ticket price</td>
+</tr>
+<tr>
+<td>discount</td>
+<td>Ticket price discount</td>
 </tr>
 <tr>
 <td>isUsed</td>
@@ -1825,6 +1830,7 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
                 </span><span class="s2">"ticketTypeZoneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"isUsed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"barcodeKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"seatNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -1941,6 +1947,10 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <tr>
 <td>tickets[i].price</td>
 <td>Ticket price</td>
+</tr>
+<tr>
+<td>tickets[i].discount</td>
+<td>Ticket price discount</td>
 </tr>
 <tr>
 <td>tickets[i].isUsed</td>
@@ -2657,6 +2667,7 @@ curl -X post https://api.radario.ru/v1/orders/reserve
   </span><span class="p">}],</span><span class="w">
   </span><span class="s2">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"PartnerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Promocode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"UtmData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"UtmSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"UtmMedium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -2702,6 +2713,10 @@ curl -X post https://api.radario.ru/v1/orders/reserve
 <tr>
 <td>PartnerId</td>
 <td>(Optional) Partner ID</td>
+</tr>
+<tr>
+<td>Promocode</td>
+<td>(Optional) Promocode to apply on userOrder</td>
 </tr>
 <tr>
 <td>UtmData</td>
@@ -2756,6 +2771,7 @@ curl -X post https://api.radario.ru/v1/orders/reserve
             </span><span class="s2">"ticketTypeZoneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"isUsed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"barcodeKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"seatNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -2874,6 +2890,10 @@ curl -X post https://api.radario.ru/v1/orders/reserve
 <tr>
 <td>order.Tickets[i].price</td>
 <td>Ticket price</td>
+</tr>
+<tr>
+<td>order.Tickets[i].discount</td>
+<td>Ticket price discount</td>
 </tr>
 <tr>
 <td>order.Tickets[i].isUsed</td>
@@ -3470,6 +3490,7 @@ curl -X post https://api.radario.ru/v1/orders/update
             </span><span class="s2">"ticketTypeZoneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"isUsed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"barcodeKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"seatNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -3583,6 +3604,10 @@ curl -X post https://api.radario.ru/v1/orders/update
 <tr>
 <td>tickets[i].price</td>
 <td>Ticket price</td>
+</tr>
+<tr>
+<td>tickets[i].discount</td>
+<td>Ticket price discount</td>
 </tr>
 <tr>
 <td>tickets[i].isUsed</td>
@@ -4233,6 +4258,7 @@ curl -X get https://api.radario.ru/v1/orders/<span class="o">{</span>id<span cla
         </span><span class="s2">"ticketTypeZoneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"isUsed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"barcodeKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"seatNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -4346,6 +4372,10 @@ curl -X get https://api.radario.ru/v1/orders/<span class="o">{</span>id<span cla
 <tr>
 <td>tickets[i].price</td>
 <td>Ticket price</td>
+</tr>
+<tr>
+<td>tickets[i].discount</td>
+<td>Ticket discount</td>
 </tr>
 <tr>
 <td>tickets[i].isUsed</td>
@@ -4493,6 +4523,7 @@ curl -X get https://api.radario.ru/host/orders/<span class="o">{</span>orderId<s
                 </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"participantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"decimal"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -4606,6 +4637,10 @@ curl -X get https://api.radario.ru/host/orders/<span class="o">{</span>orderId<s
 <tr>
 <td>tickets[i].Price</td>
 <td>Ticket price</td>
+</tr>
+<tr>
+<td>tickets[i].Discount</td>
+<td>Ticket price discount</td>
 </tr>
 <tr>
 <td>tickets[i].Type</td>
