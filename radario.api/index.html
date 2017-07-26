@@ -1389,7 +1389,8 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
                 </span><span class="s2">"seatName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"exists"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="w">
             </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"baseTicketTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
@@ -1487,6 +1488,10 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <tr>
 <td>seats[i].Exists</td>
 <td>Indicate if seat is exist on grid</td>
+</tr>
+<tr>
+<td>baseTicketTypeId</td>
+<td>Base TicketType Id</td>
 </tr>
 </tbody></table>
 
