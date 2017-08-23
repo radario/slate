@@ -821,7 +821,21 @@ curl -X get https://api.radario.ru/v1/events
 <td>query</td>
 <td>string</td>
 <td>false</td>
-<td>Event end date (to). ISO 8601 format</td>
+<td>Get events with end date great or equal than specific in parameter. ISO 8601 format. If endDate is empty and eventDateFrom, eventDateTo are not specified, then current date assign to endDate</td>
+</tr>
+<tr>
+<td>eventDateFrom</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>If endDate is not specified, then events filtered by eventDateFrom and eventDateTo. So you can fetch all events, that  active in this range. ISO 8601 format.</td>
+</tr>
+<tr>
+<td>eventDateTo</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>If endDate is not specified, then events filtered by eventDateFrom and eventDateTo. So you can fetch all events, that  active in this range. ISO 8601 format.</td>
 </tr>
 </tbody></table>
 
