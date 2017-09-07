@@ -1395,6 +1395,7 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
         </span><span class="s2">"seatBeginNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"seatEndNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"zoneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"participantNameRequired"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"seats"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"isOccupied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span><span class="w">
@@ -1474,6 +1475,10 @@ curl -X get https://api.radario.ru/v1/events/<span class="o">{</span>eventId<spa
 <tr>
 <td>seatEndNumber</td>
 <td>Indicate seat number range (to)</td>
+</tr>
+<tr>
+<td>participantNameRequired</td>
+<td>Requires participant name on ticket</td>
 </tr>
 <tr>
 <td>zoneId</td>
